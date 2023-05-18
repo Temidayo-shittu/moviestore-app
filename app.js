@@ -39,9 +39,6 @@ app.use(mongoSanitize())
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_SECRET))
 
-app.get('/', (req,res)=>{
-    res.send('MOVIESTORE APP')
-})
 
 app.use('/api/v1/auth',authRouter)
 app.use('/api/v1/users',userRouter)
