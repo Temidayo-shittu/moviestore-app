@@ -20,7 +20,7 @@ const movieRouter= require('./routes/movieRoutes')
 const cartRouter= require('./routes/cartRoutes')
 const orderRouter= require('./routes/orderRoutes')
 const reviewRouter= require('./routes/reviewRoutes')
-const index= require('./index.html')
+
 //Middleware
 const notFoundMiddleware= require('./middleware/not-found')
 const errorHandlerMiddleware= require('./middleware/error-handler')
@@ -41,8 +41,9 @@ app.use(express.json())
 app.use(cookieParser(process.env.JWT_SECRET))
 
 app.use('/',(req,res)=>{
-    res.send(index)
+    res.send('MOVIESTORE APP')
 })
+
 app.use('/api/v1/auth',authRouter)
 app.use('/api/v1/users',userRouter)
 app.use('/api/v1/movies',movieRouter)
